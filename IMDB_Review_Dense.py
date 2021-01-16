@@ -151,7 +151,7 @@ model.fit(x_train,
 # while validation accuracy is much lower, at 82.7%
 
 # so, we load the weights from the second epoch
-model.load_weights(output_dir+"\\weights.03.hdf5")
+model.load_weights(output_dir+"\\weights.02.hdf5")
 
 # then predict y_hat for x_val using weights from second epoch
 # y_hat is probability sentiment is positive
