@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 """
-Jeannie Foo
-29/12/2020
 
 IMDB Film Review Sentiment Analysis
 Natural Language Processing
