@@ -1,6 +1,7 @@
 # IMDB_Review_Sentiment_Analysis
 ## Introduction
 Perform sentiment analysis on IMDB movie reviews, i.e. classify positive/negative reviews
+
 Natural Language Processing using a range of different neural network architectures, i.e.
 - Fully connected dense neural network
 - Convolutional (1D) neural network
