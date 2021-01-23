@@ -24,7 +24,7 @@ Each of these neural networks have their advantages/disadvantages:
 
 
 ## Summary
-Accuracy of model:
+AUC ROC scores of model:
 - Fully connected dense neural network **(92.37%)**
 - Convolutional (1D) neural network **(95.24%)**
 - Simple Recurrent neural network **(85.42%)**
