@@ -1,7 +1,6 @@
 # IMDB_Review_Sentiment_Analysis
 ## Introduction
-Perform sentiment analysis on IMDB movie reviews, i.e. classify positive/negative reviews
-
+Perform sentiment analysis on IMDB movie reviews, i.e. classify positive/negative reviews.
 Natural Language Processing using a range of different neural network architectures, i.e.
 - Fully connected dense neural network
 - Convolutional (1D) neural network
@@ -33,3 +32,4 @@ AUC ROC scores of model:
 - Stacked Bi-directional simple RNN **(92.55%)**
 - Non-sequential multi convolutional neural network **(95.24%)**
 
+Corpus of words in this dataset is not very large, therefore for bigger datasets, the ROC scores might be more varied
