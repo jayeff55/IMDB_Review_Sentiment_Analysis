@@ -1,0 +1,9 @@
+--- !MultiCnnModelConfig
+n_conv_1: 256
+n_conv_2: 256
+n_conv_3: 256
+k_conv_1: 2
+k_conv_2: 3
+k_conv_3: 4
+n_dense: 256
+dropout: 0.2
