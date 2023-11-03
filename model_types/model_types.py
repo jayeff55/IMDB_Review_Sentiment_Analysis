@@ -3,7 +3,7 @@ from keras.layers import Dense, Flatten, Dropout, Embedding
 from keras.models import Model
 from keras.layers import Conv1D, SpatialDropout1D, GlobalMaxPooling1D, LSTM, SimpleRNN, Input, concatenate
 from keras.layers.wrappers import Bidirectional
-from domain_config.model_conf import *
+from utils.model_conf import *
 from abc import ABC
 
 

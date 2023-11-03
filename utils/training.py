@@ -3,7 +3,7 @@ import sys
 import keras
 from keras.datasets import imdb
 from keras.preprocessing.sequence import pad_sequences
-from domain_config.model_conf import *
+from utils.model_conf import *
 from utils.read_yaml import *
 import yaml
 import numpy as np

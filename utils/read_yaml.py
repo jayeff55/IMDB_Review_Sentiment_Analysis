@@ -1,4 +1,4 @@
-from domain_config.model_conf import *
+from utils.model_conf import *
 import yaml
 
 

@@ -49,7 +49,7 @@ if __name__ == "__main__":
         output_directory = Path(args.output_directory)
     else:
         training_config_filepath = Path("configs/training_configs.yaml")
-        model_config_filepath = Path("configs/model_configs/stacked_bi_LSTM_configs.yaml")
-        output_directory = Path("trained_models/stacked_bi_LSTM")
+        model_config_filepath = Path("configs/model_configs/CNN_configs.yaml")
+        output_directory = Path("trained_models")
 
     main(training_config_filepath, model_config_filepath, output_directory)
