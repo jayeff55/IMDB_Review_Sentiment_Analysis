@@ -1,18 +1,18 @@
 --- !TrainingConfig
 # Training
-epoch: 4
-batchSize: 128
+epoch: 2
+batch_size: 128
 
 # vector-space embedding
 n_dim: 64
-
 n_unique_words: 5000       
 n_words_to_skip: 50        
-max_review_length: 400     # Even though input length is increased, the total number of parameters is still less than the dense network
-pad_type: "pre"            
+max_review_length: 400
+pad_type: "pre"
 trunc_type: "pre"          
-drop_embed: 0.2            # dropout to embedding layer
+drop_embed: 0.2
 
+# compile
 optimizer: "adam"
 loss: "binary_crossentropy"
 metrics: ["accuracy"]

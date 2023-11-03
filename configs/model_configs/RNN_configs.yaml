@@ -1,0 +1,3 @@
+--- !RnnModelConfig
+n_rnn: 256
+dropout: 0.2

@@ -1,5 +1,4 @@
---- !CNNModelConfig
-# CNN parameters
+--- !CnnModelConfig
 n_conv: 256    
 k_conv: 3      
 n_dense: 256

@@ -1,0 +1,3 @@
+--- !LstmModelConfig
+n_lstm: 256
+dropout: 0.2

@@ -1,0 +1,4 @@
+--- !StackedBiLstmModelConfig
+n_lstm_1: 256
+n_lstm_2: 256
+drop_lstm: 0.2

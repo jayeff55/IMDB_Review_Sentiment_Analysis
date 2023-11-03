@@ -1,0 +1,3 @@
+--- !DenseModelConfig
+n_dense: 64
+dropout: 0.5
