@@ -52,6 +52,20 @@ class LstmModelConfig:
     dropout: float = 0.2
 
 
+class MultiCnnModelConfig:
+    def __init__(self, **kwargs):
+        self.__dict__.update(kwargs)
+
+    n_conv_1: int = 256
+    n_conv_2: int = 256
+    n_conv_3: int = 256
+    k_conv_1: int = 2
+    k_conv_2: int = 3
+    k_conv_3: int = 4
+    n_dense: int = 256
+    dropout: float = 0.2
+
+
 class RnnModelConfig:
     def __init__(self, **kwargs):
         self.__dict__.update(kwargs)
