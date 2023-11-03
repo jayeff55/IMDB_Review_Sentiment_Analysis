@@ -6,6 +6,7 @@ from keras.preprocessing.sequence import pad_sequences
 from domain_config.model_conf import *
 from utils.read_yaml import *
 import yaml
+import numpy as np
 
 
 def load_process_imdb_data(training_config: TrainingConfig):
@@ -43,3 +44,26 @@ def load_process_imdb_data(training_config: TrainingConfig):
 
     return x_train, y_train, x_val, y_val
 
+
+def compile_model(training_config: TrainingConfig, model):
+    model.compile(optimizer=training_config.optimizer,
+                  loss=training_config.loss,
+                  metrics=training_config.metrics)
+
+
+def fit_model(
+        model,
+        x_train: np.ndarray,
+        y_train: np.ndarray,
+        x_val: np.ndarray,
+        y_val: np.ndarray,
+        training_config: TrainingConfig,
+        model_checkpoint: keras.callbacks.callbacks.ModelCheckpoint
+):
+    model.fit(x_train,
+              y_train,
+              batch_size=training_config.batch_size,
+              epochs=training_config.epoch,
+              verbose=1,
+              validation_data=(x_val, y_val),
+              callbacks=[model_checkpoint])
