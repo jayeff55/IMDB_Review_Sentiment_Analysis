@@ -8,31 +8,22 @@ import os
 
 
 def main(training_config_filepath, model_config_filepath, output_directory):
+    if not os.path.exists(output_directory):
+        os.makedirs(output_directory)
     training_config = load_yaml(training_config_filepath)
     model_config = load_yaml(model_config_filepath)
     x_train, y_train, x_val, y_val = load_process_imdb_data(training_config)
 
     if type(model_config) == CNNModelConfig:
-        model = build_cnn_model(model_config, training_config)
+        model = CnnModel(model_config, training_config)
     else:
-        model = Sequential()
+        raise TypeError("Model config not recognised. Cannot build model. Terminating process")
 
-    model.compile(optimizer="adam",
-                  loss="binary_crossentropy",
-                  metrics=["accuracy"])
-
-    model_checkpoint = ModelCheckpoint(filepath=output_directory + "\\weights.{epoch:02d}.hdf5")
-
-    if not os.path.exists(output_directory):
-        os.makedirs(output_directory)
-
-    model.fit(x_train,
-              y_train,
-              batch_size=batchSize,
-              epochs=E,
-              verbose=1,
-              validation_data=(x_val, y_val),
-              callbacks=[model_checkpoint])
+    model.build_model()
+    compile_model(training_config, model.model)
+    model_checkpoint = ModelCheckpoint(filepath=str(output_directory)+"\\weights.{epoch:02d}.hdf5")
+    fit_model(model.model, x_train, y_train, x_val, y_val, training_config, model_checkpoint)
+    print("Model training and fitting completed. No issues encountered")
 
 
 if __name__ == "__main__":
@@ -49,6 +40,6 @@ if __name__ == "__main__":
     else:
         training_config_filepath = Path("configs/training_configs.yaml")
         model_config_filepath = Path("configs/model_configs/CNN_configs.yaml")
-        output_directory = Path("/trained_models")
+        output_directory = Path("trained_models")
 
     main(training_config_filepath, model_config_filepath, output_directory)
