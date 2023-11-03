@@ -14,8 +14,18 @@ def main(training_config_filepath, model_config_filepath, output_directory):
     model_config = load_yaml(model_config_filepath)
     x_train, y_train, x_val, y_val = load_process_imdb_data(training_config)
 
-    if type(model_config) == CNNModelConfig:
+    if type(model_config) == CnnModelConfig:
         model = CnnModel(model_config, training_config)
+    elif type(model_config) == DenseModelConfig:
+        model = DenseModel(model_config, training_config)
+    elif type(model_config) == LstmModelConfig:
+        model = LstmModel(model_config, training_config)
+    elif type(model_config) == MultiCnnModelConfig:
+        model = NonSeqMultiConvModel(model_config, training_config)
+    elif type(model_config) == RnnModelConfig:
+        model = RnnModel(model_config, training_config)
+    elif type(model_config) == StackedBiLstmModelConfig:
+        model = StackedBiLstmModel(model_config, training_config)
     else:
         raise TypeError("Model config not recognised. Cannot build model. Terminating process")
 
@@ -39,7 +49,7 @@ if __name__ == "__main__":
         output_directory = Path(args.output_directory)
     else:
         training_config_filepath = Path("configs/training_configs.yaml")
-        model_config_filepath = Path("configs/model_configs/CNN_configs.yaml")
-        output_directory = Path("trained_models")
+        model_config_filepath = Path("configs/model_configs/stacked_bi_LSTM_configs.yaml")
+        output_directory = Path("trained_models/stacked_bi_LSTM")
 
     main(training_config_filepath, model_config_filepath, output_directory)

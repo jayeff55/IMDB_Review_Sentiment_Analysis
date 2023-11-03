@@ -1,0 +1,16 @@
+val_loss: 0.6557 - val_accuracy: 0.5754
+val_loss: 0.6220 - val_accuracy: 0.6277
+val_loss: 0.5552 - val_accuracy: 0.7315
+val_loss: 0.4577 - val_accuracy: 0.7936
+val_loss: 0.4591 - val_accuracy: 0.7954
+val_loss: 0.4816 - val_accuracy: 0.7764
+val_loss: 0.5174 - val_accuracy: 0.7990
+val_loss: 0.6236 - val_accuracy: 0.6462
+val_loss: 0.5878 - val_accuracy: 0.6848
+val_loss: 0.5137 - val_accuracy: 0.7768
+val_loss: 0.7627 - val_accuracy: 0.6050
+val_loss: 0.7951 - val_accuracy: 0.4958
+val_loss: 0.6299 - val_accuracy: 0.6279
+val_loss: 0.6125 - val_accuracy: 0.6655
+val_loss: 0.6426 - val_accuracy: 0.6830
+val_loss: 0.6357 - val_accuracy: 0.6643
